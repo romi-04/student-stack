@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-Stack</title>
+    <link rel="stylesheet" href="student_Stack_style.css">
+    <script src="student_stack_jscript.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo" onclick="showPage('home')">Student-Stack</a>
+                <ul class="nav-menu">
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('search')">Browse Questions</a></li>
+                    <li><a href="#" onclick="showPage('branch')">Branches</a></li>
+                    <li><a href="#" onclick="showPage('admin')">Contributor</a></li>
+                </ul>
+                <button class="auth-btn" onclick="toggleAuth()">Sign In</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        <!-- Homepage -->
+        <div id="home" class="page active">
+            <section class="hero fade-in">
+                <h1>Academic Question Paper Archive</h1>
+                <p>Access thousands of past exam papers, organized by branch, year, and semester</p>
+                <a href="search_page.html" class="cta-button" onclick="showPage('search')">Browse Questions</a>
+            </section>
+
+            <section class="subject-tiles fade-in">
+                <div class="tile" onclick="searchByBranch('Computer Science Engineering')">
+                    <div class="tile-icon"></div>
+                    <h3>Computer Science Engineering</h3>
+                    <p>Programming, Algorithms, Data Structures</p>
+                </div>
+                <div class="tile" onclick="searchByBranch('Civil Engineering')">
+                    <div class="tile-icon"></div>
+                    <h3>Civil Engineering</h3>
+                    <p>Structure Engineering, Reinforced Cement Concrete, Geotechnical Engineering</p>
+                </div>
+                <div class="tile" onclick="searchByBranch('Electrical Engineering')">
+                    <div class="tile-icon"></div>
+                    <h3>Electrical Engineering </h3>
+                    <p>Circuit Analysis, Electromagnetism, Power Systems,Control Systems</p>
+                </div>
+                <div class="tile" onclick="searchByBranch('Electronics and Communication Engineering')">
+                    <div class="tile-icon"></div>
+                    <h3>Electronics and Communication Engineering</h3>
+                    <p>Analog and digital electronics, communication systems, signal processing, and control systems</p>
+                </div>
+                <div class="tile" onclick="searchByBranch('Mechanical Engineering')">
+                    <div class="tile-icon"></div>
+                    <h3>Mechanical Engineering</h3>
+                    <p>Thermodynamics, Fluid Mechanics, Solid Mechanics, Machine Design, Manufacturing Processes, Dynamics</p>
+                </div>
+                <div class="tile" onclick="searchByBranch('Metullargical and materials Engineering')">
+                    <div class="tile-icon"></div>
+                    <h3>Meturllargical and materials Engineering</h3>
+                    <p>Extractive Metallurgy, Physical Metallurgy, Mechanical Metallurgy, Materials Science, and Engineering Thermodynamics</p>
+                </div>
+                <div class="tile" onclick="searchByBranch('Production Engineering')">
+                    <div class="tile-icon"></div>
+                    <h3>Production Engineering</h3>
+                    <p>Manufacturing processes, quality engineering, industrial engineering, operations management, and automation</p>
+                </div>
+                <div class="tile" onclick="searchByBranch('Production Engineering')">
+                    <div class="tile-icon"></div>
+                    <h3>Electronics and Computational Mechanics</h3>
+                    <p>Manufacturing processes, quality engineering, industrial engineering, operations management, and automation</p>
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+        
+
+        
+    </div>
+
