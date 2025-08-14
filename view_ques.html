@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question Paper Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    label, select, button {
+      display: block;
+      margin: 10px 0;
+    }
+
+    #pdfContainer {
+      margin-top: 30px;
+    }
+
+    embed {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Question Paper Viewer</h2>
+
+  <!-- Branch Dropdown -->
+  <label for="branch">Branch:</label>
+  <select id="branch">
+    <option value="">Select Branch</option>
+    <option value="CSE">Computer Science Engineering </option>
+    <option value="ECE">Electronics and Communication Engineering</option>
+    <option value="EEE">Electrical Engineering</option>
+    <option value="MECH">Mechanical Engineering </option>
+    <option value="CIVIL">Civil Engineering </option>
+    <option value="PROD">Production Engineering </option>
+    <option value="MME">Materials and Metallurgical Engineering</option>
+    <option value="ECM">Electronics and Computational Mechanics</option>
+
+  </select>
+
+  <!-- Semester Dropdown -->
+  <label for="semester">Semester:</label>
+  <select id="semester">
+    <option value="">Select Semester</option>
+    <option value="1">Semester 1</option>
+    <option value="2">Semester 2</option>
+    <option value="3">Semester 3</option>
+    <option value="4">Semester 4</option>
+    <option value="5">Semester 5</option>
+    <option value="6">Semester 6</option>
+    <option value="7">Semester 7</option>
+    <option value="8">Semester 8</option>
+  </select>
+
+  <!-- Year Dropdown -->
+  <label for="year">Year:</label>
+  <select id="year">
+    <option value="">Select Year</option>
+    <option value="2022">2022</option>
+    <option value="2023">2023</option>
+    <option value="2024">2024</option>
+  </select>
+
+  <!-- Subject Dropdown -->
+  <label for="subject">Subject:</label>
+  <select id="subject">
+    <option value="">Select Subject</option>
+    <option value="Maths">Maths</option>
+    <option value="Physics">Physics</option>
+    <option value="DataStructures">Data Structures</option>
+    <option value="Circuits">Circuits</option>
+    <option value="Mechanics">Mechanics</option>
+    <!-- Add more subjects as needed -->
+  </select>
+
+  <!-- Button -->
+  <button onclick="loadPDF()">Load Question Paper</button>
+
+  <!-- PDF Viewer -->
+  <div id="pdfContainer"></div>
+
+  <!-- Script -->
+  <script>
+    function loadPDF() {
+      const branch = document.getElementById("branch").value;
+      const semester = document.getElementById("semester").value;
+      const year = document.getElementById("year").value;
+      const subject = document.getElementById("subject").value;
+
+      // Validation
+      if (!branch || !semester || !year || !subject) {
+        alert("Please select all fields.");
+        return;
+      }
+
+      const pdfPath = `question-papers/${branch}/${semester}/${year}/${subject}.pdf`;
+
+      const viewerHTML = `
+        <h3>${branch} - Semester ${semester} - ${year} - ${subject}</h3>
+        <embed src="${pdfPath}" width="100%" height="600px" type="application/pdf" />
+        <p><a href="${pdfPath}" download>⬇️ Download PDF</a></p>
+      `;
+
+      document.getElementById("pdfContainer").innerHTML = viewerHTML;
+    }
+  </script>
+
+</body>
+</html>
