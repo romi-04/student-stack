@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Search - Student Stack</title>
+    <link rel="stylesheet" href="student_Stack_style.css" />
+</head>
+<body>
+    <div class="container">
+        <section class="search-page">
+            <h1 class="title">📚 Search Question Papers</h1>
+
+            <input
+                type="text"
+                id="searchInput"
+                class="search-input"
+                placeholder="🔍 Search by subject, code, or keyword..."
+            />
+
+            <div class="filters">
+                <select id="semesterFilter" class="filter-select">
+                    <option value="">Select Semester</option>
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5">Semester 5</option>
+                    <option value="6">Semester 6</option>
+                    <option value="7">Semester 7</option>
+                    <option value="8">Semester 8</option>
+                </select>
+
+                <select id="yearFilter" class="filter-select">
+                    <option value="">Select Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+
+                <select id="examTypeFilter" class="filter-select">
+                    <option value="">Exam Type</option>
+                    <option value="midterm">Mid-Semester</option>
+                    <option value="final">End Semester</option>
+                </select>
+
+                <select id="branchTypeFilter" class="filter-select">
+                    <option value="">Select Branch</option>
+                    <option value="CSE">Computer Science</option>
+                    <option value="ECE">Electronics & Comm.</option>
+                    <option value="EEE">Electrical</option>
+                    <option value="ME">Mechanical</option>
+                    <option value="CE">Civil</option>
+                    <option value="MME">Metallurgy</option>
+                    <option value="PE">Production</option>
+                </select>
+
+                <select id="courseTypeFilter" class="filter-select">
+                    <option value="">Select Subject</option>
+                    <!-- Populated dynamically -->
+                </select>
+            </div>
+             <div class="subject-info">
+                <button type="button" class="reset-btn" onclick="resetFilters()">Reset Filters</button>
+                <button type="button" class="submit-btn" onclick="searchPapers()">Search Papers</button>
+            </div>
+        </section>
+
+        <section id="resultsSection" class="results-section" >
+            <h2 class="results-title">Search Results</h2>
+            <div id="resultsContainer"></div>
+        </section>
+        </section>
+    </div>
+
+    <script src="student_stack_jscript.js"></script>
+</body>
+</html>
