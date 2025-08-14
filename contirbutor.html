@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- First Page: Welcome -->
+        <div id="welcomePage" class="page">
+            <div class="contributor-welcome">
+                <div class="contributor-icon">🎓</div>
+                <h1 class="welcome-title">Want to be a Contributor?</h1>
+                <p class="welcome-subtitle">
+                    Help your fellow students by sharing question papers, notes, and study materials. 
+                    Your contributions make a difference in everyone's academic journey!
+                </p>
+                <button class="upload-btn" onclick="showUploadPage()">
+                    📤 Start Contributing
+                </button>
+            </div>
+        </div>
+
+        <!-- Second Page: Upload Form -->
+        <div id="uploadPage" class="page hidden">
+            <div class="upload-section">
+                <button class="back-btn" onclick="showWelcomePage()">
+                    ← Back
+                </button>
+                
+                <h2 class="section-title">📤 Upload Question Paper</h2>
+                
+                <form class="upload-form" onsubmit="handleUpload(event)">
+                    <div class="form-group">
+                        <label class="form-label">📄 Upload File</label>
+                        <div class="file-upload" id="fileUpload" onclick="document.getElementById('fileInput').click()">
+                            <p id="fileUploadText">📁 Click to select file or drag and drop</p>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Supported formats: PDF, DOC, DOCX</p>
+                        </div>
+                        <input type="file" id="fileInput" class="hidden" accept=".pdf,.doc,.docx" onchange="handleFileSelect(this)">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Subject Name</label>
+                        <input type="text" class="form-input" placeholder="e.g., Data Structures and Algorithms" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Subject Code</label>
+                        <input type="text" class="form-input" placeholder="e.g., CS301" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label"> Branch</label>
+                        <select class="form-select" id="branchSelect" onchange="updateSubjects()" required>
+                            <option value="">Select Branch</option>
+                            <option value="CSE">Computer Science Engineering</option>
+                            <option value="ECE">Electronics & Communication</option>
+                            <option value="EEE">Electrical & Electronics</option>
+                            <option value="ME">Mechanical Engineering</option>
+                            <option value="CE">Civil Engineering</option>
+                            <option value="MME">Metallurgy & Materials</option>
+                            <option value="PE">Production Engineering</option>
+                        </select>
+                    </div>
+
+                    <div class="grid-row">
+                        <div class="form-group">
+                            <label class="form-label"> Year</label>
+                            <select class="form-select" required>
+                                <option value="">Select Year</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label"> Semester</label>
+                            <select class="form-select" required>
+                                <option value="">Select Semester</option>
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                                <option value="5">Semester 5</option>
+                                <option value="6">Semester 6</option>
+                                <option value="7">Semester 7</option>
+                                <option value="8">Semester 8</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label"> Exam Type</label>
+                            <select class="form-select" required>
+                                <option value="">Select Type</option>
+                                <option value="midterm">Mid-Semester</option>
+                                <option value="final">End Semester</option>
+                                
+                                
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label"> Tags (comma separated)</label>
+                        <input type="text" class="form-input" placeholder="e.g., Arrays, Trees, Sorting, Graph Theory">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">📝 Additional Notes (Optional)</label>
+                        <textarea class="form-input" rows="3" placeholder="Any additional information about this question paper..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        📤 Upload Question Paper
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
